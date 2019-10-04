@@ -2,6 +2,10 @@ variable "ssh_key" {
   default = "~/.ssh/id_rsa"
 }
 
+variable "consul_version" {
+  default = "" # no version get newest OSS
+}
+
 variable "consul_servers" {
   default = 3
 }
@@ -24,7 +28,7 @@ resource "aws_instance" "krastin-consul-vm-node" {
   provisioner "remote-exec" {
     inline = [
       # install consul binary
-      "sudo -H -u consul -s env PRODUCT='1.6.0' /home/consul/install_consul.sh",
+      "sudo -H -u consul -s env VERSION='${consul_version}' /home/consul/install_consul.sh",
 
       # set up the first #consul_servers amount of nodes as SERVER=true and as bootstrap-expect as the amount of server nodes
       "sudo -H -u consul -s env RETRYIPS='${jsonencode(slice(var.consul_node_ips, 0, var.consul_servers))}' SERVER='${count.index < var.consul_servers ? "true" : "false"}' BOOTSTRAP='${var.consul_servers}' /home/consul/configure_consul.sh",
