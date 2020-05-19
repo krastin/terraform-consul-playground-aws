@@ -37,7 +37,7 @@ resource "aws_instance" "consul-server" {
   tags = {
     Owner = var.owner
     # Keep  = ""
-    Name = "krastin-${var.datacenter}-consul-server.${count.index}"
+    Name = "${var.aws_prefix}-${var.datacenter}-consul-server.${count.index}"
     CLUSTER = "CONSUL"
     Datacenter = var.datacenter
   }

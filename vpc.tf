@@ -5,7 +5,7 @@ resource "aws_vpc" "vpc" {
   tags = {
     Owner = var.owner
     # Keep  = ""
-    Name = "krastin-${var.datacenter}-vpc"
+    Name = "${var.aws_prefix}-${var.datacenter}-vpc"
     Datacenter = var.datacenter
   }
 }
@@ -16,7 +16,7 @@ resource "aws_internet_gateway" "igw" {
   tags = {
     Owner = var.owner
     # Keep  = ""
-    Name = "krastin-${var.datacenter}-igw"
+    Name = "${var.aws_prefix}-${var.datacenter}-igw"
     Datacenter = var.datacenter
   }
 }
@@ -56,7 +56,7 @@ resource "aws_security_group" "secgrp-permit" {
   tags = {
     Owner = var.owner
     # Keep  = ""
-    Name = "krastin-${var.datacenter}-secgrp-permit"
+    Name = "${var.aws_prefix}-${var.datacenter}-secgrp-permit"
     Datacenter = var.datacenter
   }
 }
@@ -69,7 +69,7 @@ resource "aws_subnet" "subnet-consul" {
   tags = {
     Owner = var.owner
     # Keep  = ""
-    Name = "krastin-${var.datacenter}-subnet-consul"
+    Name = "${var.aws_prefix}-${var.datacenter}-subnet-consul"
     Datacenter = var.datacenter
   }
 }
