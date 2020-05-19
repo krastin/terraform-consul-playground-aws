@@ -13,6 +13,8 @@ variable "ssh_key" {
   default = "~/.ssh/id_rsa"
 }
 
+variable "instance_ssh_keyname" {}
+
 provider "aws" {
   profile    = var.aws_profile
   region     = var.aws_region

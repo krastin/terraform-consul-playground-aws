@@ -1,15 +1,11 @@
-aws_profile = "profile_one"
-ssh_key = "/Users/root/.ssh/aws-key-one.pem"
+aws_profile = "workProfile"
+ssh_key = "/Users/admin/.ssh/aws-work-eu_central_1.pem"
 
-consul_version = "1.4.1+ent"
-consul_node_ips = [
-    "10.100.0.101",
-    "10.100.0.102",
-    "10.100.0.103",
-    "10.100.0.104",
-    "10.100.0.105",
-    "10.100.0.106",
-    "10.100.0.107",
-    "10.100.0.108",
-    "10.100.0.109",
-]
+owner = "john@doe.com"
+
+consul-autojoin-keyid = "AXXXXXXXXXXXXXXXXXXX"
+consul-autojoin-secretkey = "blahblahblahSECUREblahblah"
+instance_ssh_keyname = "dc1-instances-sshkey-01"
+
+consul_version = "1.7.3+ent"
+consul_ami_version = "1.7.3-ent"
