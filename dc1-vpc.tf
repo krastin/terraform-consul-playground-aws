@@ -1,5 +1,5 @@
 resource "aws_vpc" "krastin-consul-dc1-vpc" {
-  cidr_block = "10.100.0.0/16"
+  cidr_block = var.dc1-cidr_block
   enable_dns_hostnames = true
 
   tags = {

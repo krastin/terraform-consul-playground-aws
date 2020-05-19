@@ -23,3 +23,6 @@ variable "dc1-consul_client_ips" {
     "10.1.0.203",
   ]
 }
+
+variable "dc1-consul-autojoin-keyid" {}
+variable "dc1-consul-autojoin-secretkey" {}

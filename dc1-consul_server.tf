@@ -22,7 +22,7 @@ resource "aws_instance" "krastin-consul-vm-node" {
       # test auto-join
       "sudo rm /etc/consul.d/retry_join.json",
       #"echo -e 'retry_join = [\"provider=aws tag_key=CLUSTER tag_value=CONSUL\"]' | sudo tee /etc/consul.d/cloud_join.hcl",
-      "echo 'retry_join = [\"provider=aws tag_key=CLUSTER tag_value=CONSUL\"]' | sudo tee /etc/consul.d/cloud_join.hcl",
+      "echo 'retry_join = [\"provider=aws tag_key=CLUSTER tag_value=CONSUL access_key_id=${var.dc1-consul-autojoin-keyid} secret_access_key=${var.dc1-consul-autojoin-secretkey}\"]' | sudo tee /etc/consul.d/cloud_join.hcl",      
 
       # start up consul
       "sudo systemctl start consul"
