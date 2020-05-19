@@ -48,7 +48,7 @@ data "aws_ami" "ami-consul-server" {
 
     filter {
         name   = "name"
-        values = ["krastin-xenial-consul-${var.consul_ami_version}-*"]
+        values = ["${var.consul_ami_filter}"]
     }
 
     filter {

@@ -10,10 +10,6 @@ variable "consul_ami_filter" {
   default = "ubuntu/images/hvm-ssd/ubuntu-bionic-18.04-amd64-server-*" # no version get 1.7.3+ent NOTE: use dash instead of plus here
 }
 
-variable "consul_ami_version" {
-  default = "1.7.3-ent" # no version get 1.7.3+ent NOTE: use dash instead of plus here
-}
-
 variable "consul_server_ips" {
   default = [
     "10.1.0.101",
