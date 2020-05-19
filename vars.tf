@@ -3,11 +3,11 @@
 ######################
 
 variable "consul_version" {
-  default = "" # no version get newest OSS
+  default = "" # if no version passed then get newest OSS
 }
 
 variable "consul_ami_filter" {
-  default = "ubuntu/images/hvm-ssd/ubuntu-bionic-18.04-amd64-server-*" # no version get 1.7.3+ent NOTE: use dash instead of plus here
+  default = "ubuntu/images/hvm-ssd/ubuntu-bionic-18.04-amd64-server-*"
 }
 
 variable "consul_server_ips" {
