@@ -26,6 +26,7 @@ variable "consul_client_ips" {
   ]
 }
 
+variable "consul_license" {}
 variable "consul-autojoin-keyid" {}
 variable "consul-autojoin-secretkey" {}
 
