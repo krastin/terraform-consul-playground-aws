@@ -1,15 +1,25 @@
-aws_profile = "profile_one"
-ssh_key = "/Users/root/.ssh/aws-key-one.pem"
+## VPC Variables
+aws_profile = "aws-work-dev"
+aws_region = "eu-central-1"
+aws_prefix = "testing"
+datacenter = "dc1"
+cidr_block = "10.1.0.0/16"
+owner = "john@doe.com"
+ssh_key = "/Users/admin/.ssh/aws-work-dev-euc1-key1.pem"
+instance_ssh_keyname = "instance-dev-key1"
 
-consul_version = "1.4.1+ent"
-consul_node_ips = [
-    "10.100.0.101",
-    "10.100.0.102",
-    "10.100.0.103",
-    "10.100.0.104",
-    "10.100.0.105",
-    "10.100.0.106",
-    "10.100.0.107",
-    "10.100.0.108",
-    "10.100.0.109",
+## Consul Variables
+consul_version = "1.7.3+ent"
+consul_ami_filter = "ubuntu/images/hvm-ssd/ubuntu-bionic-18.04-amd64-server-*"
+consul-autojoin-keyid = "AXXXXXXXXXXXXXXXXXXX"
+consul-autojoin-secretkey = "veryverySECRETmuchHIDDENsuchDANGER"
+consul_server_ips = [
+    "10.1.0.101",
+    "10.1.0.102",
+    "10.1.0.103",
+]
+consul_client_ips = [
+    "10.1.0.201",
+    "10.1.0.202",
+    "10.1.0.203",
 ]
