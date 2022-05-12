@@ -56,7 +56,7 @@ data "aws_ami" "ami-consul-server" {
         values = ["hvm"]
     }
 
-    owners = ["729476260648"]
+    owners = ["938620692197"]
 }
 
 output "consul_servers_public_ips" {
